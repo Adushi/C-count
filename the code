@@ -1,0 +1,29 @@
+  static void Main(string[] args)
+  {
+      questioning(100000);
+  }
+
+  static void questioning(int final_num)
+  {
+      Stopwatch Time = new Stopwatch();
+      Console.WriteLine("hello, would you like to start the count? (y/n)");
+    string question = Console.ReadLine();
+      if (question == "no")
+      {
+          Console.WriteLine("get out");
+      }    
+
+    if(question == "yes")
+      {
+          
+          Time.Start();
+          int current_num = 0;
+         while(current_num < final_num)
+          {
+              Console.Write($"{current_num}\r");
+              current_num++;
+          }
+         Time.Stop();
+      }
+    Console.WriteLine($"It took: {Time.Elapsed.TotalSeconds} seconds to get to {final_num}");
+  }
